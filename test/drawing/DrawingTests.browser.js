@@ -14,5 +14,6 @@
   "squares.circles.json",
   "stroke.json",
   "verticalpen.drawing.json",
-  "dithering.basic.json"
+  "dithering.basic.json",
+  "selection.lasso.json"
 ]}
