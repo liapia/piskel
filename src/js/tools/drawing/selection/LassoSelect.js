@@ -24,7 +24,7 @@
   };
 
   /** @override */
-  ns.LassoSelect.prototype.updateDragSelection_ = function (col, row, color, frame, overlay) {
+  ns.LassoSelect.prototype.updateDragSelection_ = function (col, row, frame, overlay) {
     this.addPixel_(col, row, frame);
     // use ShapeSelection during selection, contains only the pixels hovered by the user
     var selection = new pskl.selection.ShapeSelection(this.getLassoPixels_());
@@ -32,7 +32,7 @@
   };
 
   /** @override */
-  ns.LassoSelect.prototype.endDragSelection_ = function (col, row, color, frame, overlay) {
+  ns.LassoSelect.prototype.endDragSelection_ = function (col, row, frame, overlay) {
     this.addPixel_(col, row, frame);
     // use LassoSelection to finalize selection, includes pixels inside the lasso shape
     var selection = new pskl.selection.LassoSelection(this.getLassoPixels_(), frame);

@@ -14,7 +14,7 @@
   pskl.utils.inherit(ns.AbstractDragSelect, ns.BaseSelect);
 
   /** @override */
-  ns.AbstractDragSelect.prototype.onSelectStart_ = function (col, row, color, frame, overlay) {
+  ns.AbstractDragSelect.prototype.onSelectStart_ = function (col, row, frame, overlay) {
     if (this.hasSelection) {
       this.hasSelection = false;
       overlay.clear();
@@ -27,28 +27,28 @@
   };
 
   /** @override */
-  ns.AbstractDragSelect.prototype.onSelect_ = function (col, row, color, frame, overlay) {
+  ns.AbstractDragSelect.prototype.onSelect_ = function (col, row, frame, overlay) {
     if (!this.hasSelection && (this.startCol !== col || this.startRow !== row)) {
       this.hasSelection = true;
       this.startDragSelection_(col, row);
     }
 
     if (this.hasSelection) {
-      this.updateDragSelection_(col, row, color, frame, overlay);
+      this.updateDragSelection_(col, row, frame, overlay);
     }
   };
 
   /** @override */
-  ns.AbstractDragSelect.prototype.onSelectEnd_ = function (col, row, color, frame, overlay) {
+  ns.AbstractDragSelect.prototype.onSelectEnd_ = function (col, row, frame, overlay) {
     if (this.hasSelection) {
-      this.endDragSelection_(col, row, color, frame, overlay);
+      this.endDragSelection_(col, row, frame, overlay);
     }
   };
 
   /** @protected */
-  ns.AbstractDragSelect.prototype.startDragSelection_ = function (col, row, color, frame, overlay) {};
+  ns.AbstractDragSelect.prototype.startDragSelection_ = function (col, row, frame, overlay) {};
   /** @protected */
-  ns.AbstractDragSelect.prototype.updateDragSelection_ = function (col, row, color, frame, overlay) {};
+  ns.AbstractDragSelect.prototype.updateDragSelection_ = function (col, row, frame, overlay) {};
   /** @protected */
-  ns.AbstractDragSelect.prototype.endDragSelection_ = function (col, row, color, frame, overlay) {};
+  ns.AbstractDragSelect.prototype.endDragSelection_ = function (col, row, frame, overlay) {};
 })();
